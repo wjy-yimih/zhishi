@@ -1,0 +1,61 @@
+/* Scoped additions; shared shell and button styles come from styles.css. */
+.ds-labs .lab-panel>h2{font-size:22px;font-weight:500;line-height:1.6;margin:0 0 12px;font-family:var(--serif)}
+.ds-labs .ds-controls{align-items:flex-start;gap:18px 24px}
+.ds-labs .ds-controls label{display:flex;flex-direction:column;gap:9px;font-size:12px;color:#657b59;max-width:100%}
+.ds-labs .ds-controls input[type=text]{width:min(390px,100%);margin:0;padding:11px 12px;background:#fff;border:1px solid #dbe3d1;border-radius:5px;color:#435b39}
+.ds-labs .ds-controls input[inputmode=numeric]{width:130px}
+.ds-labs .ds-controls select{background:#fff;color:#435b39;border:1px solid #dbe3d1;padding:10px 12px;border-radius:5px;min-height:40px;max-width:100%}
+.ds-labs .ds-controls small{color:#8c9a80;font-size:10px;line-height:1.7}
+.ds-labs .ds-mode-tabs{flex-basis:100%;margin:0 0 4px}
+.ds-labs .ds-navigation{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:21px 0}
+.ds-labs .ds-step-count{font-size:11px;color:#879678;margin-left:auto;line-height:1.8}
+.ds-labs .ds-metrics{display:flex;align-items:center;gap:14px 26px;flex-wrap:wrap;margin:24px 0 14px;font-size:12px;color:#879578;line-height:1.9}
+.ds-labs .ds-metrics strong{font-weight:500;color:#4d713c;margin-left:5px}
+.ds-labs .ds-array{display:flex;justify-content:center;gap:9px;padding:19px 0 4px;min-width:max-content}
+.ds-labs .ds-array-unit{text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px;flex-shrink:0}
+.ds-labs .ds-array-unit>small{font-size:10px;color:#8e9d80}
+.ds-labs .ds-array-cell{position:relative;width:52px;height:60px;border:1px solid #cfdcc1;border-radius:5px;display:flex;align-items:center;justify-content:center;background:#fff;color:#4c6841;font:24px Georgia,serif;line-height:1}
+.ds-labs .ds-array-cell.is-discarded{opacity:.3;background:#e9eee3}
+.ds-labs .ds-array-cell.is-active{border:2px solid #be995b;background:#f9f2e4;color:#806439}
+.ds-labs .ds-array-cell.is-found{background:#4d7540;color:#fff;border-color:#4d7540}
+.ds-labs .ds-array-cell.is-filled{background:#e3ecd9}
+.ds-labs .ds-array-cell.is-empty{border-style:dashed;color:#b0bba4;background:#f8faf4}
+.ds-labs .ds-array-cell.is-marked{box-shadow:inset 0 -3px #8eaa76}
+.ds-labs .ds-array-cell.is-sorted{background:#e0ecd5;border-color:#a9c095}
+.ds-labs .ds-array-cell.is-sorted.is-active{border-color:#be995b}
+.ds-labs .ds-array-cell.is-hole{border-style:dashed;background:#f8f5eb;color:#b29e79}
+.ds-labs .ds-array-cell.is-candidate{box-shadow:inset 0 -3px #a78750}
+.ds-labs .ds-array-cell sub{position:absolute;bottom:5px;right:5px;font:8px var(--sans);color:#8c9c7b}
+.ds-labs .ds-index-marker{display:block;font-size:10px;font-weight:500;min-height:27px;max-width:105px;color:#897445;line-height:1.6}
+.ds-labs .ds-container-array{gap:18px}
+.ds-labs .ds-container-array .ds-array-cell{width:68px}
+.ds-labs .ds-legend{font-size:10px;color:#91a081;text-align:center;line-height:1.9;margin:18px 0 0}
+.ds-labs .ds-small,.ds-labs .ds-original{font-size:12px;color:#819272;line-height:1.9;margin:0 0 10px}
+.ds-labs .ds-original small{font-size:10px;color:#9ca98f}
+.ds-labs .ds-logical{text-align:center;color:#627d50;font-size:13px;line-height:2;margin:12px 0 0}
+.ds-labs .ds-logical strong{font-weight:500;font-size:11px;color:#889b78}
+.ds-labs .ds-explanation{border:1px solid #dce6d2;background:#f6f9f0;border-radius:6px;padding:18px 20px;line-height:1.95;font-size:13px}
+.ds-labs .ds-explanation>strong{font-size:11px;color:#789367;font-weight:500}
+.ds-labs .ds-explanation p{margin:5px 0}
+.ds-labs .ds-code{font:12px/1.9 Consolas,monospace;color:#637c51;background:#f1f4eb;border:1px solid #e4eadb;padding:19px 21px;border-radius:6px;overflow:auto;margin:20px 0;tab-size:2}
+.ds-labs .ds-input-error{color:#976e35;background:#faf4e9;padding:12px 15px;border-radius:5px;font-size:12px;line-height:1.9}
+.ds-labs .ds-error{border-color:#e5d5b9;background:#faf6eb;font-size:13px;line-height:1.9;color:#8c713e}
+.ds-labs .ds-error strong{font-weight:500}
+.ds-labs .ds-tree-svg{display:block;width:100%;max-height:320px;min-width:310px;margin:auto;overflow:visible}
+.ds-labs .ds-tree-edge{stroke:#c0cfb1;stroke-width:2}
+.ds-labs .ds-tree-node circle{fill:#fff;stroke:#b7cba5;stroke-width:1.5}
+.ds-labs .ds-tree-node text{font:20px Georgia,serif;fill:#607f4c}
+.ds-labs .ds-tree-node.is-visited circle{fill:#dfead3;stroke:#a5bc92}
+.ds-labs .ds-tree-node.is-current circle{fill:#53763f;stroke:#37592a;stroke-width:2.5}
+.ds-labs .ds-tree-node.is-current text{fill:white}
+.ds-labs .ds-tree-node text.ds-tree-caption{font:11px var(--sans);fill:#6d8a58}
+.ds-labs .ds-traversal-output{color:#688354;font-size:12px;margin:22px 0}
+.ds-labs .ds-traversal-output>strong{font-size:11px;font-weight:500;letter-spacing:1px}
+.ds-labs .ds-sequence{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0;min-height:39px}
+.ds-labs .ds-sequence>span{display:grid;place-items:center;min-width:37px;height:37px;background:#e7efdd;color:#5f7e49;border-radius:5px;font:18px Georgia,serif}
+.ds-labs .ds-sequence>span.is-last{color:white;background:#62824c}
+.ds-labs .ds-sequence>i{font-style:normal;color:#a3b092;font-size:11px}
+.ds-labs .ds-sequence>small{color:#a0ad93;font-size:12px}
+.ds-labs .ds-key{font-size:13px;line-height:1.9;color:#8e723e;background:#faf4e6;border:1px dashed #d8c299;border-radius:5px;padding:10px 15px;width:fit-content;margin:13px auto 0}
+.ds-labs .ds-key small{font-size:10px;color:#a08b68}
+@media(max-width:760px){.ds-labs .ds-controls{gap:18px;flex-direction:column}.ds-labs .ds-controls label{width:100%}.ds-labs .ds-controls input[type=text]{width:100%}.ds-labs .ds-controls input[inputmode=numeric]{width:140px}.ds-labs .ds-mode-tabs{display:flex;width:100%;flex-wrap:wrap}.ds-labs .ds-array{justify-content:flex-start}.ds-labs .ds-container-array{gap:9px}.ds-labs .ds-container-array .ds-array-cell{width:48px}.ds-labs .ds-array-cell{width:43px;height:55px;font-size:22px}.ds-labs .ds-array-unit{gap:6px}.ds-labs .ds-index-marker{font-size:9px;max-width:69px}.ds-labs .ds-navigation .btn{padding:10px 12px;font-size:11px}.ds-labs .ds-step-count{flex-basis:100%;margin-left:0}.ds-labs .ds-explanation{padding:15px;font-size:12px}.ds-labs .ds-metrics{gap:10px 18px}.ds-labs .ds-tree-svg{min-width:280px}.ds-labs .ds-code{padding:15px;font-size:11px}}

@@ -1,0 +1,15 @@
+# Personal study backups
+*学习备份*.json
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Local tooling
+node_modules/
+.env
+.env.*

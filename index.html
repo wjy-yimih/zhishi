@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="知室，概率论与数理统计、离散数学、数据结构与计算机系统的中文自学空间。从具体例子理解概念，拆开符号、证明与代码，用例题、交互实验和自测慢慢学懂。">
+  <title>知室 · 把知识慢慢学懂</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="知室">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="companion.css">
+  <link rel="stylesheet" href="multi-course.css">
+  <link rel="stylesheet" href="ds-labs.css">
+  <link rel="stylesheet" href="code-tutor.css">
+  <link rel="stylesheet" href="discrete.css">
+  <link rel="stylesheet" href="probability.css">
+  <script>window.COURSES=[];</script>
+  <script defer src="content/systems.js"></script>
+  <script defer src="content/data-structures-foundation.js"></script>
+  <script defer src="content/data-structures-advanced.js"></script>
+  <script defer src="content/data-structures.js"></script>
+  <script defer src="companion.js"></script>
+  <script defer src="labs.js"></script>
+  <script defer src="ds-labs.js"></script>
+  <script defer src="code-tutor.js"></script>
+  <script defer src="content/discrete-logic.js"></script>
+  <script defer src="content/discrete-relations.js"></script>
+  <script defer src="content/discrete-algebra.js"></script>
+  <script defer src="content/discrete-graphs.js"></script>
+  <script defer src="content/discrete.js"></script>
+  <script defer src="discrete-tools.js"></script>
+  <script defer src="content/probability-foundations.js"></script>
+  <script defer src="content/probability-inference.js"></script>
+  <script defer src="content/probability-processes.js"></script>
+  <script defer src="content/probability.js"></script>
+  <script defer src="probability-tools.js"></script>
+  <script defer src="mobile-study.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-action="skip-main">跳到主要内容</a>
+  <div id="app"></div>
+  <dialog id="search-dialog" aria-labelledby="search-title">
+    <div class="search-head"><span id="search-title">搜索你的知识花园</span><button class="icon-btn" data-action="close-search" aria-label="关闭搜索">×</button></div>
+    <label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search-input" type="search" placeholder="试试：条件概率、置信、马尔可夫、链表…" autocomplete="off"></label>
+    <div id="search-results"></div>
+    <div class="search-foot">搜索标题、标签和全部讲解内容 <span>ESC 关闭</span></div>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>知室需要启用 JavaScript，以显示课程并在本机保存你的学习进度。</noscript>
+</body>
+</html>
