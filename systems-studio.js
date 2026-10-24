@@ -186,6 +186,10 @@ function renderLesson(lesson) {
   return `<div class="sys-reading" data-sys-lesson="${id}"><aside class="sys-definition" data-sys-definition hidden aria-live="polite"></aside><section class="sys-visual article-section" id="sys-visual"><div class="sys-section-heading"><span class="sys-kicker">先看见过程，再认识名字</span><h2>从这幅图开始，一次只看一步</h2><p class="sys-visual-lead">${words(lead,id)}</p></div><div data-sys-walkthrough="${id}">${walkthrough(id)}</div><p class="sys-word-hint">点图下的步骤，或按“下一步”。带虚线的词可以点开，立即看白话解释。</p></section><details class="sys-story article-section" id="sys-story"><summary>把这个具体情境，再讲细一点</summary><div class="sys-story-copy"><p><strong>本课想弄明白：</strong>${esc(g.goal)}</p>${paragraphs(g.story,id)}</div></details>${miniLab(id)}${window.PlainPictures?.render(id)||''}<section class="sys-glossary article-section" id="sys-terms"><div class="sys-section-heading"><span class="sys-kicker">词语不用猜</span><h2>本课的名词，翻译成白话</h2></div><label class="sys-term-search">找一个词<input type="search" data-sys-input="terms" data-sys-id="${id}" placeholder="试试本课的术语或缩写…"></label><div data-sys-glossary="${id}">${glossary(id)}</div></section><aside class="sys-boundary"><strong>类比说到哪里就该停？</strong><p>${esc(g.boundary)}</p></aside></div>`;
 }
 
+function renderVisual(lesson) {
+  const id=lesson.id,g=find(id);if(!g)return '';
+  return `<div class="sys-reading" data-sys-lesson="${id}"><aside class="sys-definition" data-sys-definition hidden aria-live="polite"></aside><div data-sys-walkthrough="${id}">${walkthrough(id)}</div>${miniLab(id)}${window.PlainPictures?.render(id)||''}</div>`;
+}
 function renderCheck(lesson) {
   const id=lesson.id,g=find(id),q=g?.quiz||lessons.find(l=>l.id===id)?.quiz;if(!q)return '';
   const selected=checks.get(id),answered=Number.isInteger(selected);
@@ -254,5 +258,5 @@ document.addEventListener('input',event=>{
     lab.querySelector('.sys-demo-feedback').innerHTML=temp.querySelector('.sys-demo-feedback').innerHTML;
   }
 });
-window.SystemsStudio={renderLesson,renderCheck,renderReference,toc,renderGuide,coverage:()=>({lessons:lessons.length,illustrated:lessons.filter(l=>l.beginner).length,perCourse:Object.fromEntries(window.COURSES.map(c=>[c.id,{lessons:c.chapters.flatMap(ch=>ch.lessons).length,illustrated:c.chapters.flatMap(ch=>ch.lessons).filter(l=>l.beginner).length}]))})};
+window.SystemsStudio={renderLesson,renderVisual,renderCheck,renderReference,toc,renderGuide,coverage:()=>({lessons:lessons.length,illustrated:lessons.filter(l=>l.beginner).length,perCourse:Object.fromEntries(window.COURSES.map(c=>[c.id,{lessons:c.chapters.flatMap(ch=>ch.lessons).length,illustrated:c.chapters.flatMap(ch=>ch.lessons).filter(l=>l.beginner).length}]))})};
 })();
