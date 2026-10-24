@@ -1,0 +1,63 @@
+name: 知室每日学习邮件
+
+on:
+  schedule:
+    # UTC 04:00 = 北京时间 12:00。GitHub 排队可能使实际送达晚于此时。
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'dry-run 只检查；send-test 发测试；send-today 发今天任务'
+        required: true
+        default: dry-run
+        type: choice
+        options:
+          - dry-run
+          - send-test
+          - send-today
+      preview_date:
+        description: '只供 dry-run 预览的日期 YYYY-MM-DD，留空用北京时间今天'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zhishi-daily-study-email
+  cancel-in-progress: false
+
+jobs:
+  remind:
+    # Gmail already has the pre-scheduled messages. This optional alternate sender
+    # stays disabled unless deliberately enabled to avoid duplicate daily mail.
+    if: github.event_name == 'workflow_dispatch' || vars.STUDY_ACTIONS_REMINDERS_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 读取已提交的学习计划
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: 准备 Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: 检查或发送今日学习清单
+        env:
+          PYTHONUTF8: '1'
+          STUDY_MAIL_TO: ${{ secrets.STUDY_MAIL_TO }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REMINDER_MODE: ${{ inputs.mode }}
+          PREVIEW_DATE: ${{ inputs.preview_date }}
+        shell: bash
+        run: |
+          if [ "$REMINDER_MODE" = "send-test" ]; then
+            python scripts/send-study-reminder.py --send --test
+          elif [ "$GITHUB_EVENT_NAME" = "schedule" ] || [ "$REMINDER_MODE" = "send-today" ]; then
+            python scripts/send-study-reminder.py --send
+          else
+            python scripts/send-study-reminder.py --date "$PREVIEW_DATE"
+          fi
