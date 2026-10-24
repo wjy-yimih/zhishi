@@ -13,3 +13,7 @@ desktop.ini
 node_modules/
 .env
 .env.*
+
+# Local Python bytecode
+__pycache__/
+*.py[cod]

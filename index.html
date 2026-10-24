@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f6f7f2">
-  <meta name="description" content="知室，概率论与数理统计、离散数学、数据结构与计算机系统的中文自学空间。从具体例子理解概念，拆开符号、证明与代码，用例题、交互实验和自测慢慢学懂。">
+  <meta name="description" content="知室，电磁学、概率论与数理统计、离散数学、数据结构与计算机系统的中文自学空间。从具体例子理解概念，拆开符号、证明与代码，用例题、交互实验和自测慢慢学懂。">
   <title>知室 · 把知识慢慢学懂</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
@@ -12,12 +12,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="知室">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="systems-studio.css?v=085143c81cf1">
+  <link rel="stylesheet" href="plain-pictures.css?v=b1bdc34407a3">
   <link rel="stylesheet" href="companion.css">
   <link rel="stylesheet" href="multi-course.css">
   <link rel="stylesheet" href="ds-labs.css">
   <link rel="stylesheet" href="code-tutor.css">
   <link rel="stylesheet" href="discrete.css">
   <link rel="stylesheet" href="probability.css">
+  <link rel="stylesheet" href="electromagnetism.css?v=43d010991c">
+  <link rel="stylesheet" href="study-planner.css?v=e57119eab0">
   <script>window.COURSES=[];</script>
   <script defer src="content/systems.js"></script>
   <script defer src="content/data-structures-foundation.js"></script>
@@ -39,14 +43,32 @@
   <script defer src="content/probability.js"></script>
   <script defer src="probability-tools.js"></script>
   <script defer src="mobile-study.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="content/electromagnetism-electric.js"></script>
+  <script defer src="content/electromagnetism-magnetic.js"></script>
+  <script defer src="content/electromagnetism-induction.js"></script>
+  <script defer src="content/electromagnetism.js"></script>
+  <script defer src="electromagnetism-tools.js"></script>
+  <script defer src="study-reminder-status.js?v=5b90f5bdff"></script>
+  <script defer src="study-plan-config.js?v=e8984fe45a"></script>
+  <script defer src="study-plan-engine.js?v=a9ae88babe"></script>
+  <script defer src="study-planner.js?v=fe4d395969"></script>
+  <script defer src="content/systems-beginner-a.js?v=d1a42ef252a6"></script>
+  <script defer src="content/systems-beginner-b.js?v=c1e01df2c089"></script>
+  <script defer src="content/systems-beginner-c.js?v=41620fb8991b"></script>
+  <script defer src="content/ds-beginner.js?v=afd51ae432a9"></script>
+  <script defer src="content/discrete-beginner.js?v=427f9ce892af"></script>
+  <script defer src="content/probability-beginner.js?v=e89e9dc74ef0"></script>
+  <script defer src="content/em-beginner.js?v=43a0a3425c72"></script>
+  <script defer src="plain-pictures.js?v=1d436c12dde4"></script>
+  <script defer src="systems-studio.js?v=49bcad0dd8a5"></script>
+  <script defer src="app.js?v=199735b97a61"></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-action="skip-main">跳到主要内容</a>
   <div id="app"></div>
   <dialog id="search-dialog" aria-labelledby="search-title">
     <div class="search-head"><span id="search-title">搜索你的知识花园</span><button class="icon-btn" data-action="close-search" aria-label="关闭搜索">×</button></div>
-    <label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search-input" type="search" placeholder="试试：条件概率、置信、马尔可夫、链表…" autocomplete="off"></label>
+    <label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search-input" type="search" placeholder="试试：高斯、电动势、条件概率、链表…" autocomplete="off"></label>
     <div id="search-results"></div>
     <div class="search-foot">搜索标题、标签和全部讲解内容 <span>ESC 关闭</span></div>
   </dialog>
